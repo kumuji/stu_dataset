@@ -5,7 +5,9 @@
 <a href="https://scholar.google.com/citations?user=LNqaebYAAAAJ&hl=en">Stewart Worrall</a>,
 <a href="https://www.vision.rwth-aachen.de/person/1/">Bastian Leibe</a>
 <a href="https://scholar.google.com/citations?user=wT0QEpQAAAAJ&hl=en">Julie Stephany Berrio Perez</a>
+
 ![teaser](./docs/github_teaser.jpg)
+
 </div>
 <br><br>
 
