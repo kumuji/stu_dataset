@@ -4,8 +4,9 @@ from pathlib import Path
 
 import numpy as np
 from sklearn.metrics import auc, average_precision_score, roc_curve
+from tqdm import tqdm
 
-from utils.common import load_labels, load_point_cloud, convert_to_builtin_types
+from utils.common import convert_to_builtin_types, load_labels, load_point_cloud
 
 """
 # Example usage in a model
@@ -108,16 +109,17 @@ class PointOODMetricsCalculator:
 def main(args):
     metrics_calculator = PointOODMetricsCalculator()
 
-    for seq_path in args.data_dir.glob("1[0-9][0-9]"):
+    for seq_path in tqdm(sorted(list(args.data_dir.glob("1[0-9][0-9]")))):
         if seq_path.is_dir():
-            pred_files = sorted((args.pred_dir / seq_path.name).glob("*.txt"))
+            lidar_files = sorted((seq_path / "velodyne").glob("*.bin"))
 
-            for pred_file in pred_files:
-                label_file = seq_path / "labels" / f"{pred_file.stem}.label"
-                gt_sem, _ = load_labels(label_file)
-                pcd_file = seq_path / "velodyne" / f"{pred_file.stem}.bin"
+            for pcd_file in tqdm(lidar_files, leave=False, position=1):
                 points, _ = load_point_cloud(pcd_file)
 
+                label_file = seq_path / "labels" / f"{pcd_file.stem}.label"
+                gt_sem, _ = load_labels(label_file)
+
+                pred_file = args.pred_dir / seq_path.name / f"{pcd_file.stem}.txt"
                 metrics_calculator.update(
                     points, np.loadtxt(pred_file).astype(np.float32), gt_sem
                 )
