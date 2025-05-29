@@ -76,7 +76,7 @@ Please check [Mask4Former3D folder in the repository](./Mask4Former3D/)
 
 ## Acknowledgement
 Many thanks to reviewers of our paper submission.
-You helped us approve the project a lot.
+You helped us improve the project a lot.
 
 ## BibTeX
 ```
