@@ -17,14 +17,15 @@
 
 ---
 
-## News
-* **2024-05-29**: Training Code and Checkpoints Release
-* **2024-03-25**: Data and Evaluation Code Release
-* **2024-02-26**: STU Accepted at CVPR 2025
+## 🗞️ News
+* **2025-06-14**: Images Released
+* **2025-05-29**: Training Code and Checkpoints Released
+* **2025-03-25**: Data and Evaluation Code Released
+* **2025-02-26**: STU Accepted at CVPR 2025
 
 ---
 
-## Data
+## 💽 Data
 - __STU__ dataset is available at [STU](https://omnomnom.vision.rwth-aachen.de/data/stu-dataset/).
 - __PANOPTIC-CUDAL__ dataset is available at [Panoptic-CUDAL](https://omnomnom.vision.rwth-aachen.de/data/panoptic-cudal/).
 
@@ -53,7 +54,7 @@ Overall the data follows the SemanticKITTI format.
 
 Predictions are simple `.txt` files with confidence per point.
 
-## Evaluation
+## 🏁 Evaluation
 Simple evaluation for point-level anomaly segmentation:
 ```bash
 python compute_point_level_ood.py --data-dir stu_dataset/val --pred-dir ./prediction
@@ -64,17 +65,23 @@ Simple evaluation for point-level anomaly segmentation:
 python compute_object_level_ood.py --data-dir stu_dataset/val --instance-dir ./instance_prediction
 ```
 
-## Training and Inference
+## 🏎️ Training and Inference
 Please check [Mask4Former3D folder in the repository](./Mask4Former3D/)
 
-## TODO
-- [ ] Release anonymized images
+## 📒 TODO
+- [ ] Open Public Test Submission
+- [x] Release anonymized images
 - [x] Release training code and checkpoints
 - [x] Release code for points projection to images
 - [x] Release the data
 - [x] Release evaluation code
 
-## Acknowledgement
+As of June 14, 2025, the public test submission is delayed due to the size of the test set and the computing requirements for evaluation.
+I had initially planned to host the test set on Codalab/Codabench; however, a single submission for point-level evaluation would require a 3 GB upload, which is too large and takes too long to evaluate.
+I will try to find a workaround for this limitation.
+In the meantime, please feel free to evaluate on validation set, and if you have a method you would like to evaluate on test, email me and we can figure it out.
+
+## 🙏 Acknowledgement
 Many thanks to reviewers of our paper submission.
 You helped us improve the project a lot.
 

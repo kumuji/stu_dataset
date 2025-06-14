@@ -1,0 +1,183 @@
+﻿port_a_camera_0:
+header:
+  seq: 788
+  stamp:
+    secs: 1704843225
+    nsecs: 352841854
+  frame_id: "port_a_camera_0"
+height: 1208
+width: 1920
+distortion_model: "plumb_bob"
+D: [-0.260735, 0.046071, 0.001173, -0.000154, 0.0]
+K: [1827.48989, 0.0, 925.91346, 0.0, 1835.88358, 642.07154, 0.0, 0.0, 1.0]
+R: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P: [1678.93384, 0.0, 918.44184, 0.0, 0.0, 1779.26013, 644.71356, 0.0, 0.0, 0.0, 1.0, 0.0]
+binning_x: 0
+binning_y: 0
+roi:
+  x_offset: 0
+  y_offset: 0
+  height: 0
+  width: 0
+  do_rectify: False
+
+port_a_camera_1:
+header:
+  seq: 779
+  stamp:
+    secs: 1704843225
+    nsecs: 586155891
+  frame_id: "port_a_camera_1"
+height: 1208
+width: 1920
+distortion_model: "equidistant"
+D: [-0.037439, -0.004983, 0.004292, -0.002258]
+K: [968.79741, 0.0, 954.078232, 0.0, 974.917054, 664.433449, 0.0, 0.0, 1.0]
+R: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P: [1012.510805, 0.0, 916.27003, 0.0, 0.0, 1018.906575, 843.59341, 0.0, 0.0, 0.0, 1.0, 0.0]
+binning_x: 0
+binning_y: 0
+roi:
+  x_offset: 0
+  y_offset: 0
+  height: 0
+  width: 0
+  do_rectify: False
+
+port_b_camera_0:
+header:
+  seq: 729
+  stamp:
+    secs: 1704843223
+    nsecs: 586154938
+  frame_id: "port_b_camera_0"
+height: 1208
+width: 1920
+distortion_model: "plumb_bob"
+D: [-0.288548, 0.104497, -0.001729, 0.00302, 0.0]
+K: [1845.22591, 0.0, 936.35196, 0.0, 1853.86544, 650.10661, 0.0, 0.0, 1.0]
+R: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P: [1693.44751, 0.0, 937.88662, 0.0, 0.0, 1793.90771, 651.43401, 0.0, 0.0, 0.0, 1.0, 0.0]
+binning_x: 0
+binning_y: 0
+roi:
+  x_offset: 0
+  y_offset: 0
+  height: 0
+  width: 0
+  do_rectify: False
+
+port_b_camera_1:
+header:
+  seq: 741
+  stamp:
+    secs: 1704843224
+    nsecs:  19480944
+  frame_id: "port_b_camera_1"
+height: 1208
+width: 1920
+distortion_model: "plumb_bob"
+D: [-0.286262, 0.102781, 0.002619, 0.001749, 0.0]
+K: [1864.72501, 0.0, 970.12232, 0.0, 1873.55503, 650.17816, 0.0, 0.0, 1.0]
+R: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P: [1714.6311, 0.0, 975.02519, 0.0, 0.0, 1813.01599, 654.29745, 0.0, 0.0, 0.0, 1.0, 0.0]
+binning_x: 0
+binning_y: 0
+roi:
+  x_offset: 0
+  y_offset: 0
+  height: 0
+  width: 0
+  do_rectify: False
+
+port_c_camera_0:
+header:
+  seq: 754
+  stamp:
+    secs: 1704843224
+    nsecs: 286151886
+  frame_id: "port_c_camera_0"
+height: 1208
+width: 1920
+distortion_model: "plumb_bob"
+D: [-0.293808, 0.114099, -0.003534, 0.001313, 0.0]
+K: [1868.79534, 0.0, 942.08755, 0.0, 1879.58294, 664.88899, 0.0, 0.0, 1.0]
+R: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P: [1717.29749, 0.0, 941.1232, 0.0, 0.0, 1819.62085, 665.93594, 0.0, 0.0, 0.0, 1.0, 0.0]
+binning_x: 0
+binning_y: 0
+roi:
+  x_offset: 0
+  y_offset: 0
+  height: 0
+  width: 0
+  do_rectify: False
+
+port_c_camera_1:
+header:
+  seq: 762
+  stamp:
+    secs: 1704843225
+    nsecs:  52834988
+  frame_id: "port_c_camera_1"
+height: 1208
+width: 1920
+distortion_model: "plumb_bob"
+D: [-0.294376, 0.125442, -0.002546, -0.000282, 0.0]
+K: [1886.15844, 0.0, 998.18086, 0.0, 1897.20158, 647.67828, 0.0, 0.0, 1.0]
+R: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P: [1737.39307, 0.0, 1003.49701, 0.0, 0.0, 1837.89514, 648.22993, 0.0, 0.0, 0.0, 1.0, 0.0]
+binning_x: 0
+binning_y: 0
+roi:
+  x_offset: 0
+  y_offset: 0
+  height: 0
+  width: 0
+  do_rectify: False
+
+port_d_camera_0:
+header:
+  seq: 809
+  stamp:
+    secs: 1704843226
+    nsecs: 286193848
+  frame_id: "port_d_camera_0"
+height: 1208
+width: 1920
+distortion_model: "equidistant"
+D: [-0.036805, -0.007166, -0.005873, 0.006247]
+K: [973.643281, 0.0, 955.433506, 0.0, 976.532409, 652.994446, 0.0, 0.0, 1.0]
+R: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P: [928.653671, 0.0, 936.089157, 0.0, 0.0, 931.409299, 753.433139, 0.0, 0.0, 0.0, 1.0, 0.0]
+binning_x: 0
+binning_y: 0
+roi:
+  x_offset: 0
+  y_offset: 0
+  height: 0
+  width: 0
+  do_rectify: False
+
+port_d_camera_1:
+header:
+  seq: 754
+  stamp:
+    secs: 1704843224
+    nsecs: 452840805
+  frame_id: "port_d_camera_1"
+height: 1208
+width: 1920
+distortion_model: "equidistant"
+D: [-0.042778, -0.001466, 0.004273, -0.000596]
+K: [968.010756, 0.0, 959.928453, 0.0, 976.214308, 653.013925, 0.0, 0.0, 1.0]
+R: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P: [934.537361, 0.0, 959.604671, 0.0, 0.0, 942.457239, 759.539738, 0.0, 0.0, 0.0, 1.0, 0.0]
+binning_x: 0
+binning_y: 0
+roi:
+  x_offset: 0
+  y_offset: 0
+  height: 0
+  width: 0
+  do_rectify: False

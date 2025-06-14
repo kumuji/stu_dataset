@@ -1,0 +1,180 @@
+transforms:
+  -
+    header:
+      seq: 0
+      stamp:
+        secs: 1704842214
+        nsecs: 894391217
+      frame_id: "base_link"
+    child_frame_id: "os_sensor"
+    transform:
+      translation:
+        x: 0.7
+        y: 0.0
+        z: 1.8
+      rotation:
+        x: 0.0
+        y: 0.0
+        z: 0.00499997916669
+        w: 0.999987500026
+---
+transforms:
+  -
+    header:
+      seq: 0
+      stamp:
+        secs: 1704842215
+        nsecs: 777530136
+      frame_id: "os_sensor"
+    child_frame_id: "port_b_camera_1"
+    transform:
+      translation:
+        x: 0.469
+        y: -0.5074
+        z: -0.4468
+      rotation:
+        x: -0.6213693559
+        y: 0.683659442426
+        z: -0.278472751055
+        w: 0.262607725039
+---
+transforms:
+  -
+    header:
+      seq: 0
+      stamp:
+        secs: 1704842215
+        nsecs: 776188672
+      frame_id: "os_sensor"
+    child_frame_id: "port_b_camera_0"
+    transform:
+      translation:
+        x: 0.4662
+        y: 0.5235
+        z: -0.4201
+      rotation:
+        x: -0.25552990599
+        y: 0.270729241572
+        z: -0.68082553181
+        w: 0.630782640962
+---
+transforms:
+  -
+    header:
+      seq: 0
+      stamp:
+        secs: 1704842215
+        nsecs: 786860225
+      frame_id: "os_sensor"
+    child_frame_id: "port_a_camera_0"
+    transform:
+      translation:
+        x: 0.7658
+        y: 0.0124
+        z: -0.3925
+      rotation:
+        x: -0.496146480946
+        y: 0.498388981228
+        z: -0.494329641699
+        w: 0.510965065512
+---
+transforms:
+  -
+    header:
+      seq: 0
+      stamp:
+        secs: 1704842215
+        nsecs: 819608433
+      frame_id: "os_sensor"
+    child_frame_id: "port_c_camera_0"
+    transform:
+      translation:
+        x: 0.0242
+        y: 0.4319
+        z: -0.3965
+      rotation:
+        x: 0.00987556537774
+        y: -0.00837530731529
+        z: -0.736024879196
+        w: 0.676830632168
+---
+transforms:
+  -
+    header:
+      seq: 0
+      stamp:
+        secs: 1704842215
+        nsecs: 788943367
+      frame_id: "os_sensor"
+    child_frame_id: "port_a_camera_1"
+    transform:
+      translation:
+        x: 0.6549
+        y: -0.0916
+        z: -0.3612
+      rotation:
+        x: -0.495806641431
+        y: 0.503565007484
+        z: -0.49474681816
+        w: 0.505790118004
+---
+transforms:
+  -
+    header:
+      seq: 0
+      stamp:
+        secs: 1704842215
+        nsecs: 841123606
+      frame_id: "os_sensor"
+    child_frame_id: "port_c_camera_1"
+    transform:
+      translation:
+        x: 0.0088
+        y: -0.4135
+        z: -0.4085
+      rotation:
+        x: 0.669994696209
+        y: -0.742136812444
+        z: -0.0182807061066
+        w: 0.0024237268183
+---
+transforms:
+  -
+    header:
+      seq: 0
+      stamp:
+        secs: 1704842215
+        nsecs: 903882501
+      frame_id: "os_sensor"
+    child_frame_id: "port_d_camera_1"
+    transform:
+      translation:
+        x: -1.0627
+        y: -0.4327
+        z: -0.4253
+      rotation:
+        x: 0.586892033748
+        y: -0.626639806232
+        z: -0.384984613942
+        w: 0.338625369687
+---
+transforms:
+  -
+    header:
+      seq: 0
+      stamp:
+        secs: 1704842215
+        nsecs: 868183200
+      frame_id: "os_sensor"
+    child_frame_id: "port_d_camera_0"
+    transform:
+      translation:
+        x: -1.0511
+        y: 0.4569
+        z: -0.362
+      rotation:
+        x: 0.314804049676
+        y: -0.367889236884
+        z: -0.644167089134
+        w: 0.592118806465
+---
