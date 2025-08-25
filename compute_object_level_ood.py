@@ -4,7 +4,7 @@ from pathlib import Path
 
 import numpy as np
 
-from utils.common import load_labels, load_point_cloud
+from utils.common import load_labels, load_point_cloud, convert_to_builtin_types
 
 
 class UQEvaluator:
@@ -213,9 +213,9 @@ class ObjectOODMetricsCalculator:
         sq, rq, pq = self.evaluator.getPQ()
         metrics.update({"RQ": rq[1] * 100, "PQ": pq[1] * 100})
         _, tp, fp, fn = self.evaluator.get_stats()
-        metrics["TP"] = int(tp)
-        metrics["FP"] = int(fp)
-        metrics["FN"] = int(fn)
+        metrics["TP"] = tp
+        metrics["FP"] = fp
+        metrics["FN"] = fn
 
         return metrics
 
@@ -225,7 +225,7 @@ def main(args):
 
     for seq_path in args.data_dir.glob("1[0-9][0-9]"):
         if seq_path.is_dir():
-            pred_files = sorted((args.instance_dir / seq_path.name).glob("*.label"))
+            pred_files = sorted((args.data_dir / seq_path.name).glob("*.label"))
 
             for pred_file in pred_files:
                 prediction_semantic, prediction_instance = load_labels(pred_file)
@@ -249,7 +249,7 @@ def main(args):
     # Convert all NumPy types to native Python types for JSON serialization
     metrics = {k: (v.item() if hasattr(v, "item") else v) for k, v in metrics.items()}
     with open(args.output, "w") as f:
-        json.dump(metrics, f, indent=2)
+        json.dump(metrics, f, indent=4, default=convert_to_builtin_types)
 
 
 if __name__ == "__main__":
