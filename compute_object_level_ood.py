@@ -4,7 +4,7 @@ from pathlib import Path
 
 import numpy as np
 
-from utils.common import load_labels, load_point_cloud
+from utils.common import load_labels, load_point_cloud, convert_to_builtin_types
 
 
 class UQEvaluator:
@@ -191,7 +191,6 @@ class ObjectOODMetricsCalculator:
         )
         ignore_mask = processed_labels != -1
         semantic_labels = processed_labels[ignore_mask]
-
         # Only evaluate if sufficient anomaly points
         if np.sum(semantic_labels) >= self.min_num_points_to_eval:
             if len(semantic_prediction) != len(semantic_target):
@@ -200,7 +199,7 @@ class ObjectOODMetricsCalculator:
             self.evaluator.addBatchUnknown(
                 semantic_prediction[ignore_mask],
                 instance_prediction[ignore_mask],
-                semantic_target[ignore_mask],
+                semantic_labels,
                 instance_target[ignore_mask],
             )
 
@@ -213,11 +212,10 @@ class ObjectOODMetricsCalculator:
 
         sq, rq, pq = self.evaluator.getPQ()
         metrics.update({"RQ": rq[1] * 100, "PQ": pq[1] * 100})
-
         _, tp, fp, fn = self.evaluator.get_stats()
-        metrics["TP"] = tp[1]
-        metrics["FP"] = fp[1]
-        metrics["FN"] = fn[1]
+        metrics["TP"] = tp
+        metrics["FP"] = fp
+        metrics["FN"] = fn
 
         return metrics
 
@@ -227,7 +225,7 @@ def main(args):
 
     for seq_path in args.data_dir.glob("1[0-9][0-9]"):
         if seq_path.is_dir():
-            pred_files = sorted((args.pred_dir / seq_path.name).glob("*.label"))
+            pred_files = sorted((args.data_dir / seq_path.name).glob("*.label"))
 
             for pred_file in pred_files:
                 prediction_semantic, prediction_instance = load_labels(pred_file)
@@ -236,7 +234,7 @@ def main(args):
                 gt_semantic, gt_instance = load_labels(label_file)
 
                 pcd_file = seq_path / "velodyne" / f"{pred_file.stem}.bin"
-                points = load_point_cloud(pcd_file)
+                points, _ = load_point_cloud(pcd_file)
 
                 metrics_calculator.update(
                     points,
@@ -247,8 +245,11 @@ def main(args):
                 )
 
     metrics = metrics_calculator.compute_metrics()
+    print(metrics)
+    # Convert all NumPy types to native Python types for JSON serialization
+    metrics = {k: (v.item() if hasattr(v, "item") else v) for k, v in metrics.items()}
     with open(args.output, "w") as f:
-        json.dump(metrics, f, indent=2)
+        json.dump(metrics, f, indent=4, default=convert_to_builtin_types)
 
 
 if __name__ == "__main__":
