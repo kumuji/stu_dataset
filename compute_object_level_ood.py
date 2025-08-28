@@ -225,16 +225,16 @@ def main(args):
 
     for seq_path in args.data_dir.glob("1[0-9][0-9]"):
         if seq_path.is_dir():
-            pred_files = sorted((args.data_dir / seq_path.name).glob("*.label"))
+            lidar_files = sorted((seq_path / "velodyne").glob("*.bin"))
 
-            for pred_file in pred_files:
+            for pcd_file in lidar_files:
+                points, _ = load_point_cloud(pcd_file)
+
+                pred_file = args.instance_dir / seq_path.name / f"{pcd_file.stem}.label"
                 prediction_semantic, prediction_instance = load_labels(pred_file)
 
-                label_file = seq_path / "labels" / f"{pred_file.stem}.label"
+                label_file = seq_path / "labels" / f"{pcd_file.stem}.label"
                 gt_semantic, gt_instance = load_labels(label_file)
-
-                pcd_file = seq_path / "velodyne" / f"{pred_file.stem}.bin"
-                points, _ = load_point_cloud(pcd_file)
 
                 metrics_calculator.update(
                     points,
@@ -247,7 +247,6 @@ def main(args):
     metrics = metrics_calculator.compute_metrics()
     print(metrics)
     # Convert all NumPy types to native Python types for JSON serialization
-    metrics = {k: (v.item() if hasattr(v, "item") else v) for k, v in metrics.items()}
     with open(args.output, "w") as f:
         json.dump(metrics, f, indent=4, default=convert_to_builtin_types)
 
