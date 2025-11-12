@@ -81,6 +81,15 @@ I had initially planned to host the test set on Codalab/Codabench; however, a si
 I will try to find a workaround for this limitation.
 In the meantime, please feel free to evaluate on validation set, and if you have a method you would like to evaluate on test, email me and we can figure it out.
 
+As of 12 November 2025, I have evaluated a few submissions to the test set.
+If you would like to get the results for the test set, please send me a link to download your prediction files (Google Drive is fine, but something curl-able is better).
+I will download the predictions and evaluate them using the following scripts:
+
+1. [Compute Object-Level OOD](https://github.com/kumuji/stu_dataset/blob/main/compute_object_level_ood.py).
+2. [Compute Point-Level OOD](https://github.com/kumuji/stu_dataset/blob/main/compute_point_level_ood.py).
+
+Please ensure your files are in a compatible format.
+
 ## 🙏 Acknowledgement
 Many thanks to reviewers of our paper submission.
 You helped us improve the project a lot.
