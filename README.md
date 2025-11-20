@@ -27,7 +27,7 @@
 
 ## 💽 Data
 - __STU__ dataset is available at [STU](https://omnomnom.vision.rwth-aachen.de/data/stu-dataset/).
-- __PANOPTIC-CUDAL__ dataset is available at [Panoptic-CUDAL](https://omnomnom.vision.rwth-aachen.de/data/panoptic-cudal/).
+- __PANOPTIC-CUDAL__ dataset is available at [Panoptic-CUDAL](https://github.com/DarrylTseng/PanopticCUDAL).
 
 To verify that downloaded files are correct, you can verify the SHA256 hash of the files.
 ```bash
